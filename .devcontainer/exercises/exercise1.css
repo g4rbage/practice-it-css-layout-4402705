@@ -2,10 +2,33 @@
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: .5fr 2fr .5fr;
+  grid-template-rows: 0.5fr 0.5fr 1.5fr 0.5fr;
   border: 1px solid red;
-  gap: 5px;
-  grid-template-areas: "header header sidebar" "main main main" "footer footer footer";
+  gap: 2%;
+  grid-template-areas: "header header header" "sidebar sidebar sidebar" "main main main" "footer footer footer";
+}
+
+/* <//> MAKING IT RESPONSIVE: MEDIA QUERIES <\\>
+   We can use Media Queries to set breakpoints that changes the layout and style 
+   at different screen widths, inorder to support multiple devices. 
+   Inside of the Media Queries we can define how the layout and/or style
+   changes depending on the screenwidth also called Breakpoints.
+   So in this instance we have 3 breakpoints.
+   >1: The default layout.
+   >2: When the screen width reaches a minimum of 576px.
+   >3: When the screen width reaches a minimum of 992px.
+*/
+@media (min-width: 576px) {
+  .container {
+    grid-template-areas: "sidebar header header" "sidebar main main" "sidebar main main" "sidebar footer footer";
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    grid-template-areas: "header header header" "sidebar main main" "sidebar main main" "footer footer footer";
+    grid-template-columns: .5fr 1.5fr 1fr;
+  }
 }
 
 .item-1 {
@@ -21,9 +44,17 @@
 .item-3 {
   border: 1px solid yellow;
   grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .item-4 {
   border: 1px solid pink;
   grid-area: footer;
+}
+
+img {
+  max-width: 80%;
 }
