@@ -15,6 +15,10 @@
   }
 }
 
+@media (min-width: 900px) {
+  .container {}
+}
+
 .item-1 {
   border: 1px solid purple;
   grid-area: header;
