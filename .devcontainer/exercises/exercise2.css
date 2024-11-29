@@ -29,9 +29,15 @@
   }
 
   .item-3 {
-    display: flex;
-    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main img";
   }
+
+  .item-3 img {
+    display: flex;
+  }
+
 
   .item-4 {
     display: flex;
@@ -70,4 +76,5 @@
 
 img {
   max-width: 100%;
+  grid-area: img;
 }
