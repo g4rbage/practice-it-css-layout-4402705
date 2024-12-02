@@ -2,79 +2,65 @@
 .container {
   display: grid;
   height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.5fr 1.5fr 0.5fr;
-  grid-template-areas: "header header header" "sidebar sidebar sidebar" "main main main" "footer footer footer";
-  border: 1px solid red;
-  gap: 2%;
+  grid-template-areas: "header" "sidebar" "main" "footer";
 }
 
-@media (min-width: 600px) {
-  .container {
-    grid-template-rows: 0.5fr 0.5fr 1fr 0.3fr;
-  }
+/* Header */
+.item-1 {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navigation links */
+.item-2 {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* Main content */
+.item-3 {
+  grid-area: main;
+
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Footer */
+.item-4 {
+  grid-area: footer;
 }
 
 @media (min-width: 900px) {
   .container {
-    grid-template-columns: 0.5fr 2fr;
-    grid-template-rows: 0.2fr 2fr 1fr;
+    grid-template-columns: 0.5fr 2.5fr;
+    grid-template-rows: 0.2fr 2fr 0.5fr;
     grid-template-areas: "header header" "sidebar main" "footer footer";
   }
 
   .item-2 {
-    display: flex;
-    align-items: center;
     flex-direction: column;
   }
 
   .item-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "main img";
-  }
-
-  .item-3 img {
     display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
+  img {
+    max-width: 50%;
+    object-fit: contain;
+  }
 
   .item-4 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
   }
-
-}
-
-.item-1 {
-  border: 1px solid purple;
-  grid-area: header;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.item-2 {
-  border: 1px solid blue;
-  grid-area: sidebar;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.item-3 {
-  border: 1px solid orange;
-  grid-area: main;
-
-}
-
-.item-4 {
-  border: 1px solid green;
-  grid-area: footer;
-}
-
-img {
-  max-width: 100%;
-  grid-area: img;
 }
