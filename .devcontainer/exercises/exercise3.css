@@ -1,0 +1,45 @@
+.container,
+.navigation,
+.title,
+.main,
+.related,
+.ads,
+.footer {
+  border: black solid 1px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+}
+
+.main p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Breakpoints at 600 & 900*/
+
+@media (min-width: 600px) {
+
+  .main p {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .related {}
+}
