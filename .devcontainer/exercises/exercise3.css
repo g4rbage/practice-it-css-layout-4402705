@@ -25,21 +25,23 @@
 }
 
 .main p {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  margin: 0;
 }
 
 /* Breakpoints at 600 & 900*/
 
 @media (min-width: 600px) {
 
-  .main p {
+  .right {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+
   }
 
-  .related {}
+  .main p {
+    max-width: 80%;
+  }
+
 }
+
+@media (min-width: 900px) {}
