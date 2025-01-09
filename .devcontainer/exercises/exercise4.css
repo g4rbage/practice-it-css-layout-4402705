@@ -1,0 +1,34 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /* Number of columns, equal width */
+  gap: 10px;
+}
+
+/* Lesser than * (> *) applies the CSS to everything in the .container class */
+.container>* {
+  /* Every div inside the container starts on column one and span all 12 columns */
+  grid-column: 1 / span 12;
+  border: 1px solid black;
+}
+
+@media (min-width: 600px) {
+  .related {
+    /* Starts on column one and spans 3 */
+    grid-column: 1 / span 3;
+    /* Starts on grid row 3 */
+    grid-row: 3;
+  }
+
+  .ads {
+    grid-column: 1 / span 3;
+    grid-row: 4;
+  }
+
+  .main,
+  .footer {
+    grid-column: 4 / span 9;
+  }
+
+
+}
