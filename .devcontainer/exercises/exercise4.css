@@ -12,6 +12,12 @@
   border: 1px solid black;
 }
 
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 @media (min-width: 600px) {
   .related {
     /* Starts on column one and spans 3 */
@@ -29,6 +35,23 @@
   .footer {
     grid-column: 4 / span 9;
   }
+}
 
+@media (min-width: 900px) {
+  .related {
+    grid-column: 1 / span 2;
+  }
 
+  .main {
+    grid-column: 3 / span 8;
+  }
+
+  .ads {
+    grid-column: 11 / span 2;
+    grid-row: 3;
+  }
+
+  .footer {
+    grid-column: 1 / span 12;
+  }
 }
